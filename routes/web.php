@@ -1,18 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ControladorDB;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+Route::get('recuerdo/create', [ControladorDB::class,'create']) -> name('recuerdo.create');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [ControladorDB::class,'showHome']) -> name('home');
+
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
